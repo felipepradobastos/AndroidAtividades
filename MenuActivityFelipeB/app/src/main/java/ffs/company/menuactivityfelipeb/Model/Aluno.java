@@ -39,6 +39,10 @@ public class Aluno implements Parcelable {
         }
     };
 
+    public String toString(){
+        return this.getCpf();
+    }
+
     // Getters and Setters
     public String getCpf() {
         return cpf;
