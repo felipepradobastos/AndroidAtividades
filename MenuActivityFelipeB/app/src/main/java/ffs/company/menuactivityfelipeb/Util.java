@@ -3,6 +3,7 @@ package ffs.company.menuactivityfelipeb;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class Util {
+
     public static String[] REPLACES =
             {"a", "e", "i", "o", "u", "c"};
     public static Pattern[] PATTERNS = null;

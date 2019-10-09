@@ -13,6 +13,7 @@ public class PesquisarAdapter extends ArrayAdapter<String>
     private List<String> listaCompleta;
     private List<String> resultados;
     private Filter meuFiltro;
+
     public PesquisarAdapter(
             Context ctx, int layout, List<String> textos) {
         super(ctx, layout, textos);
@@ -20,10 +21,18 @@ public class PesquisarAdapter extends ArrayAdapter<String>
         this.resultados = listaCompleta;
         this.meuFiltro = new MeuFiltro();
     }
-    @Override
+
+    /*@Override
     public int getCount() {
         return resultados.size();
+    }*/
+
+    @Override
+    public int getCount() {
+        return resultados == null ? 0 : resultados.size();
     }
+
+
     @Override
     public String getItem(int position) {
         if (resultados != null

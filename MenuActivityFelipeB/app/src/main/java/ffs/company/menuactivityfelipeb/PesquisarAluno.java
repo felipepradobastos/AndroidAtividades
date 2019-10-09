@@ -2,7 +2,9 @@ package ffs.company.menuactivityfelipeb;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ public class PesquisarAluno extends AppCompatActivity {
     TextView tvPesqCPF;
     TextView tvPesqEmail;
     TextView tvPesqIdade;
+    Button btnTrazerdados;
 
 
 
@@ -32,22 +35,20 @@ public class PesquisarAluno extends AppCompatActivity {
         tvPesqEmail = (TextView) findViewById(R.id.tvPesqEmail);
         tvPesqIdade = (TextView) findViewById(R.id.tvPesqIdade);
         tvPesqNome = (TextView) findViewById(R.id.tvPesqNome);
-
-
-        listaPesquisa = getIntent().getExtras().getParcelableArrayList("ListaAlunos");
-
-        /*for(int i=0;i<listaPesquisa.size();i++){
-            listaString.add(listaPesquisa.get(i).getNome());
-        }
-
-        PesquisarAdapter adapter = new PesquisarAdapter(this, android.R.layout.simple_dropdown_item_1line, listaString);
-
-        autoCompleteTextView.setAdapter(adapter);
-
-
         autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.atctv);
-        */
 
+
+        Bundle extras = getIntent().getExtras();
+        ArrayList<Aluno> ListaRecebida = extras.getParcelableArrayList("ListaAlunos");
+        listaString = new ArrayList<>();
+
+        Log.d("FUNCIONAPORRA", "onCreate: "+ListaRecebida.size());
+
+        for (Aluno aluno: ListaRecebida) {
+            listaString.add(aluno.getNome());
+        }
+        PesquisarAdapter adapter = new PesquisarAdapter(this, android.R.layout.simple_dropdown_item_1line, listaString);
+        autoCompleteTextView.setAdapter(adapter);
 
 
     }

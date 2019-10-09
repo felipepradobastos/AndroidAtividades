@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_STRING=1;
 
 
-    List<Aluno> listaAlunos;
+    ArrayList<Aluno> listaAlunos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent toPesquisarAluno = new Intent(getApplicationContext(), PesquisarAluno.class);
                 Bundle toPesquisarbundle = new Bundle();
-                toPesquisarbundle.putParcelableArrayList("ListaAluno", (ArrayList<? extends Parcelable>) listaAlunos);
+                toPesquisarbundle.putParcelableArrayList("ListaAlunos", listaAlunos);
                 toPesquisarAluno.putExtras(toPesquisarbundle);
                 startActivity(toPesquisarAluno);
             }
