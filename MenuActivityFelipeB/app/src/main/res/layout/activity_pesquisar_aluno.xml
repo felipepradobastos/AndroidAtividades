@@ -26,6 +26,7 @@
             android:hint="Pesquise Aqui"
             />
         <Button
+            android:id="@+id/btnRealizarPesquisa"
             android:layout_marginTop="120dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,13 +35,36 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/btnEditarAlunoPesquisa"
+            android:text="Editar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <Button
+            android:id="@+id/btnExcluirAlunoPesquisa"
+            android:text="Excluir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center"
+        android:gravity="center"
         >
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:textColor="@color/White"
@@ -49,7 +73,26 @@
             android:hint="Email"
             android:id="@+id/tvPesqEmail"
             />
-        <TextView
+
+        <EditText
+            android:hint="Nome"
+            android:textColorHint="@color/White"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textColor="@color/White"
+            android:textSize="20dp"
+            android:id="@+id/tvPesqNome"
+            />
+        <EditText
+            android:hint="Idade"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textColorHint="@color/White"
+            android:textColor="@color/White"
+            android:textSize="20dp"
+            android:id="@+id/tvPesqIdade"
+            />
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:textColorHint="@color/White"
@@ -58,24 +101,11 @@
             android:hint="CPF"
             android:id="@+id/tvPesqCPF"
             />
-        <TextView
-            android:hint="Nome"
-            android:textColorHint="@color/White"
-
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:textColor="@color/White"
-            android:textSize="20dp"
-            android:id="@+id/tvPesqNome"
-            />
-        <TextView
-            android:hint="Idade"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:textColorHint="@color/White"
-            android:textColor="@color/White"
-            android:textSize="20dp"
-            android:id="@+id/tvPesqIdade"
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salvar"
+            android:id="@+id/BtnSaveEditPesquisar"
             />
     </LinearLayout>
 
