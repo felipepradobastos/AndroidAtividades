@@ -1,0 +1,27 @@
+<html>
+<header>
+    <script type="text/javascript">
+        function showintervalo(max, min) {
+            var string;
+            for (var i = max; i > min; i--) {
+                if (i == max) {
+                    string = i.toString();
+                } else {
+                    string.concat(i.toString());
+                }
+            }
+            window.ffs.showToast(string);
+        }
+    </script>
+</header>
+<body>
+<H1>Formulário em HTML</h1>
+<form name="meuForm">
+    Max: <input type="number" name="max"/><br>
+    Min: <input type="number" name="min"/><br>
+    <input type="button"
+           onclick="showintervalo(max.value, min.value);"
+           value="Enviar">
+</form>
+</body>
+</html>
