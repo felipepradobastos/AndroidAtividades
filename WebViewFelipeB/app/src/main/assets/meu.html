@@ -1,27 +1,43 @@
-<html>
-<header>
-    <script type="text/javascript">
-        function showintervalo(max, min) {
-            var string;
-            for (var i = max; i > min; i--) {
-                if (i == max) {
-                    string = i.toString();
-                } else {
-                    string.concat(i.toString());
+<script type="text/javascript">
+        function showintervalo() {
+            var max = document.getElementById("max").value;
+            var min = document.getElementById("min").value;
+            var primos = [];
+            start = min++;
+            for(var i=start;i<max;i++){
+                var cont =0;
+                for(var u=1;u<=i;u++){
+                    if(i%u==0){
+                       cont++;
+                    }
+                }
+                if(cont==2){
+                    primos.push(i);
                 }
             }
-            window.ffs.showToast(string);
+            var string="";
+            for(var z=0;z<primos.length;z++){
+                if(z==0){
+                    string+=primos[z];
+                }
+                if(z>1){
+                    string+=", "+primos[z];
+                }
+            }
+            window.ffs.showToast ("Primos:"+string);
         }
+
     </script>
+<html>
+<header>
 </header>
 <body>
-<H1>Formulário em HTML</h1>
+<H1 id="test-h1">Formulário em HTML</h1>
 <form name="meuForm">
-    Max: <input type="number" name="max"/><br>
-    Min: <input type="number" name="min"/><br>
-    <input type="button"
-           onclick="showintervalo(max.value, min.value);"
-           value="Enviar">
+    Max: <input type="number" id="max"/><br>
+    Min: <input type="number" id="min"/><br>
+    <input type="button" onclick="showintervalo()" value="Enviar">
+
 </form>
 </body>
 </html>
